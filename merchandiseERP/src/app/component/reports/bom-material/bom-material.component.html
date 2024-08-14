@@ -1,0 +1,275 @@
+<section class="section px-3">
+    <div class="section-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <div class="w-100 d-flex justify-content-between align-items-end">
+                            <h4 class="color-primary">Style BOM Details</h4>
+                            <!-- <a href="/style_bom"
+                               class="btn btn-lg btn-primary rounded">Manage Style BOM</a> -->
+                            <button type="submit" class="btn btn-lg btn-primary rounded" routerLink="/techpack/style-bom">
+                                Manage Style BOM</button>
+                            <!-- <button type="submit" class="btn btn-lg btn-primary rounded" id="btntotalcost">Calculate</button> -->
+
+
+                        </div>
+                    </div>
+                    <div class="card-body" id="printableArea">
+                        <div class="mx-3 py-2">
+                            <h4 class="text-center text-uppercase">
+                                Bill of Materials # {{styleData.id}}</h4>
+                            <div class="row  px-2">
+                                <div class="col-4 border">
+                                    <p class="mb-0">Style Code:</p>
+                                    <h6 class="text">{{styleData.code}}</h6>
+                                </div>
+                                <div class="col-4 border">
+                                    <p class="mb-0">Style Category:</p>
+                                    <h6 class="text" >{{styleData.categoriesId?.name}}</h6>
+                                </div>
+                                <div class="col-4 border">
+                                    <p class="mb-0">Style Details:</p>
+                                    <h6 class="text">{{styleData.description}}</h6>
+                                </div>
+                            </div>
+                            <div class="row  px-2">
+                                <div class="col-md-12 p-0">
+                                    <div class="card rounded-0 shadow-none border h-100">
+                                        <!-- <div class="px-3 py-1 bg-light">
+                                        <h5 class="pt-2">Sketch</h5>
+                                    </div> -->
+                                        <div class="px-3 pt-2">
+                                            <div class="row">
+                                                <div class="col-lg-6 my-2 mx-auto text-center">
+                                                    <table class="">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td *ngFor="let im of imageList">
+                                                                    <img height="300px"
+                                                                        src="http://localhost:8098/api/sale/style_attachment/display?id={{im.id}}">
+                                                                </td>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row  px-2">
+                                <div class="col-md-12 p-0">
+                                    <div class="card rounded-0 shadow-none border h-100 ">
+                                        <div class="px-3 py-1 bg-light">
+                                            <h5 class="pt-2">BOM for S size</h5>
+                                        </div>
+                                        <div class="bg-light">
+                                            <div class="table-responsive px-2">
+                                                <table class="table table-striped table-bordered " id="smallTable">
+                                                    <thead class="border-bottom">
+                                                        <tr>
+                                                            <th>SI</th>
+                                                            <th>Material</th>
+                                                            <th>Vendor</th>
+                                                            <th>UOM</th>
+
+                                                            <th class="text-right">QTY</th>
+                                                            <th class="text-right">Unit Price</th>
+                                                            <th class="text-right">Total Cost</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let small of smallQty; index as i">
+                                                            <td>{{i+1}}</td>
+                                                            <td>
+                                                                <strong>{{small.rawMaterialId?.rawMaterialCatId?.name}}:{{small.rawMaterialId?.name}}</strong><br>
+                                                                <p>{{small.rawMaterialId?.description}}
+                                                                </p>
+                                                            </td>
+                                                            <td>{{small.rawMaterialId?.vendorId?.company}}</td>
+                                                            <td>{{small.rawMaterialId?.uomId?.name}}</td>
+                                                            <td class="text-end">{{small.quantity}}</td>
+                                                            <td class="text-end">{{small.rawMaterialId?.unitPrice}}</td>
+                                                            <td class="text-end">45</td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="6" class="text-end fw-bold">Total:</td>
+
+                                                            <td id="totalprice" class="text-end fw-bold">82.1</td>
+
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 p-0">
+                                    <div class="card rounded-0 shadow-none border h-100">
+                                        <div class="px-3 py-1 bg-light">
+                                            <h5 class="pt-2">BOM for M size</h5>
+                                        </div>
+                                        <div class="bg-light">
+                                            <div class="table-responsive px-2">
+                                                <table class="table table-striped table-bordered" id="mediumTable">
+                                                    <thead class="border-bottom">
+                                                        <tr>
+                                                            <th>SI</th>
+                                                            <th>Material</th>
+                                                            <th>Vendor</th>
+                                                            <th>UOM</th>
+
+                                                            <th class="text-right">QTY</th>
+                                                            <th class="text-right">Unit Price</th>
+                                                            <th class="text-right">Total Cost</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr *ngFor="let mi of midQty;index as i">
+                                                            <td>{{i+1}}</td>
+
+                                                            <td>
+                                                                <strong>{{mi.rawMaterialId?.rawMaterialCatId?.name}}:{{mi.rawMaterialId?.name}}</strong><br>
+                                                                <p>{{mi.rawMaterialId?.description}}
+                                                                </p>
+                                                            </td>
+                                                            <td>{{mi.rawMaterialId?.vendorId?.company}}</td>
+                                                            <td>{{mi.rawMaterialId?.uomId?.name}}</td>
+                                                            <td class="text-end">{{mi.quantity}}</td>
+                                                            <td class="text-end">{{mi.rawMaterialId?.unitPrice}}</td>
+                                                            <td class="text-end">35</td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="6" class="text-end fw-bold">Total:</td>
+
+                                                            <td id="totalPriceMid" class="text-end fw-bold">82.1
+                                                            </td>
+
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 p-0">
+                                    <div class="card rounded-0 shadow-none border h-100">
+                                        <div class="px-3 py-1 bg-light">
+                                            <h5 class="pt-2">BOM for L size</h5>
+                                        </div>
+                                        <div class="bg-light">
+                                            <div class="table-responsive px-2">
+                                                <table class="table table-striped table-bordered" id="largeTable">
+                                                    <thead class="border-bottom">
+                                                        <tr>
+                                                            <th>SI</th>
+                                                            <th>Material</th>
+                                                            <th>Vendor</th>
+                                                            <th>UOM</th>
+
+                                                            <th class="text-right">QTY</th>
+                                                            <th class="text-right">Unit Price</th>
+                                                            <th class="text-right">Total Cost</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tbody>
+                                                        <tr *ngFor="let l of largeQty;index as i">
+                                                            <td>{{i+1}}</td>
+
+                                                            <td>
+                                                                <strong>{{l.rawMaterialId?.rawMaterialCatId?.name}}:{{l.rawMaterialId?.name}}</strong><br>
+                                                                <p>{{l.rawMaterialId?.description}}
+                                                                </p>
+                                                            </td>
+                                                            <td>{{l.rawMaterialId?.vendorId?.company}}</td>
+                                                            <td>{{l.rawMaterialId?.uomId?.name}}</td>
+                                                            <td class="text-end">{{l.quantity}}</td>
+                                                            <td class="text-end">{{l.rawMaterialId?.unitPrice}}</td>
+                                                            <td class="text-end">25</td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="6" class="text-end fw-bold">Total:</td>
+
+                                                            <td id="totalPriceLarge" class="text-end fw-bold">82.1
+                                                            </td>
+
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col-md-12 p-0">
+                                    <div class="card rounded-0 shadow-none border h-100">
+                                        <div class="px-3 py-1 bg-light">
+                                            <h5 class="pt-2">Labor Cost</h5>
+                                        </div>
+                                        <div class="bg-light">
+                                            <div class="px-2">
+                                                <table class="table table-striped table-bordered" id="laborCostTable">
+                                                    <thead class="border-bottom">
+                                                        <tr>
+                                                            <th>Production Department</th>
+                                                            <th class="text-right">Labor cost (per hour)</th>
+                                                            <th class="text-right">Hours (per unit)</th>
+                                                            <th class="text-right">Total</th>
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <tr *ngFor="let ct of cost">
+                                                            <td>{{ct.departmentId?.name}}</td>
+                                                            <td class="text-right">{{ct.unitCost}}
+                                                            </td>
+                                                            <td class="text-right">{{ct.hour}}</td>
+                                                            <td class="text-right" >15</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="3" class="text-end fw-bold">Total:</td>
+
+                                                            <td id="laborCostTotal" class="text-end fw-bold">82.1
+                                                            </td>
+
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-primary" onclick="printDiv('printableArea')"><i
+                                class="fas fa-print mr-2"></i> Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
