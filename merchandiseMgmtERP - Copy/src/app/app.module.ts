@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -14,6 +15,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppComponent,
     NavbarComponent,
     SidebarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
