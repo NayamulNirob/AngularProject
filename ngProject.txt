@@ -10,3 +10,4 @@
 8."node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 9.npm install -g json-server
 10.npm install jsonwebtoken
+11.ng update @angular/core@18 @angular/cli@18 

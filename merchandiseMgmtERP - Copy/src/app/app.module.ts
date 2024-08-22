@@ -4,18 +4,16 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BuyerComponent } from './component/buyers/buyer/buyer.component';
-import { OrderDetailsComponent } from './component/buyers/order-details/order-details.component';
-import { LoginFormComponent } from './component/login/login-form/login-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuyerComponent,
-    OrderDetailsComponent,
-    LoginFormComponent
-   
+    NavbarComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
