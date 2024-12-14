@@ -15,6 +15,9 @@ git clone https://github.com/NayamulNirob/MerchandiseMgmtERP.git
 
 git clone https://github.com/NayamulNirob/AndroidStudio.git
 
+git clone https://github.com/NayamulNirob/AndroidStudio_JAVA_Projects.git
+
+git clone https://github.com/NayamulNirob/Extra.git
 
 GIT_CURL_VERBOSE=1 GIT_TRACE=1 git clone https://github.com/NayamulNirob/AndroidStudio.git
 
