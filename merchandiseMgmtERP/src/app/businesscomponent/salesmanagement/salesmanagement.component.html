@@ -1,0 +1,71 @@
+sales-management.component.html  
+<!-- <div>  
+    <h2>Sales Management</h2>  
+  
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterSales()" placeholder="Search by product or customer name..." />  
+  
+    <h3>Record New Sale</h3>  
+    <form (ngSubmit)="recordSale()">  
+      <input type="text" [(ngModel)]="newSale.productName" name="productName" placeholder="Product Name" required />  
+      <input type="number" [(ngModel)]="newSale.quantity" name="quantity" placeholder="Quantity" required />  
+      <input type="number" [(ngModel)]="newSale.price" name="price" placeholder="Price" required />  
+      <input type="text" [(ngModel)]="newSale.customerName" name="customerName" placeholder="Customer Name" required />  
+      <button type="submit">Record Sale</button>  
+    </form>  
+  
+    <button (click)="generateSalesReport()">Generate Sales Report</button>  
+  
+    <ul>  
+      <li *ngFor="let sale of filteredSales">  
+        <strong>{{ sale.productName }}</strong> - Quantity: {{ sale.quantity }} - Price: {{ sale.price | currency }} - Total: {{ sale.totalAmount | currency }} - Customer: {{ sale.customerName }}<br />  
+        <em>Sale Date: {{ sale.saleDate | date }}</em>  
+        <button (click)="updateSale(sale.id)">Update</button>  
+        <button (click)="removeSale(sale.id)">Remove</button>  
+      </li>  
+    </ul>  
+  </div> -->
+
+  <div>  
+    <h2>Sales Management</h2>  
+
+    <input type="text" [(ngModel)]="searchTerm" (input)="filterSales()" placeholder="Search by product or customer name..." />  
+
+    <h3>Record New Sale</h3>  
+    <form (ngSubmit)="recordSale()">  
+      <input type="text" [(ngModel)]="newSale.productName" name="productName" placeholder="Product Name" required />  
+      <input type="number" [(ngModel)]="newSale.quantity" name="quantity" placeholder="Quantity" required />  
+      <input type="number" [(ngModel)]="newSale.price" name="price" placeholder="Price" required />  
+      <input type="text" [(ngModel)]="newSale.customerName" name="customerName" placeholder="Customer Name" required />  
+      <button type="submit" class="bg-blue-500 text-dark py-2 px-4 rounded">Record Sale</button>  
+    </form>  
+
+    <button (click)="generateSalesReport()" class="bg-green-500 text-dark py-2 px-4 rounded mt-4">Generate Sales Report</button>  
+
+    <table class="table table-striped">  
+        <thead>  
+            <tr>  
+                <th class="border border-gray-300 p-2">Product Name</th>  
+                <th class="border border-gray-300 p-2">Quantity</th>  
+                <th class="border border-gray-300 p-2">Price</th>  
+                <th class="border border-gray-300 p-2">Total</th>  
+                <th class="border border-gray-300 p-2">Customer Name</th>  
+                <th class="border border-gray-300 p-2">Sale Date</th>  
+                <th class="border border-gray-300 p-2">Actions</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr *ngFor="let sale of filteredSales">  
+                <td class="border border-gray-300 p-2">{{ sale.productName }}</td>  
+                <td class="border border-gray-300 p-2">{{ sale.quantity }}</td>  
+                <td class="border border-gray-300 p-2">{{ sale.price | currency }}</td>  
+                <td class="border border-gray-300 p-2">{{ sale.totalAmount | currency }}</td>  
+                <td class="border border-gray-300 p-2">{{ sale.customerName }}</td>  
+                <td class="border border-gray-300 p-2">{{ sale.saleDate | date }}</td>  
+                <td class="border border-gray-300 p-2">  
+                    <button (click)="updateSale(sale.id)" class="bg-yellow-500 text-dark py-2 px-3 rounded">Update</button>  
+                    <button (click)="removeSale(sale.id)" class="bg-red-500 text-dark py-2 px-3 rounded">Remove</button>  
+                </td>  
+            </tr>  
+        </tbody>  
+    </table>  
+</div>  

@@ -1,0 +1,134 @@
+<div>
+  <h2>Reports & Analytics</h2>
+
+  <h3>Inventory Report</h3>
+  <table mat-table [dataSource]="inventoryItems" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let item">{{item.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let item">{{item.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef>Stock</th>
+      <td mat-cell *matCellDef="let item">{{item.stock}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let item">{{item.location}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let item">{{item.price | currency}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'stock', 'location', 'price']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'stock', 'location', 'price'];"></tr>
+  </table>
+
+  <!-- <h3>Sales Report</h3>  
+    <div>  
+      <canvas baseChart   
+        [datasets]="[ { data: salesRevenueChartData.data, label: 'Sales Revenue' } ]"  
+        [labels]="salesRevenueChartData.labels"  
+        [options]="{ responsive: true }"  
+        [chartType]="'bar'">  
+      </canvas>  
+    </div>   -->
+
+
+
+  <h3>Sales Report</h3>
+
+  <!-- Bar Chart Visualization -->
+  <div class="bar-chart">
+    <h4 class="text-dark">Sales Revenue</h4>
+    <div *ngFor="let data of salesRevenueChartData.data; let i = index" class="bar"
+      [style.height]="(data / maxRevenue * 100) + '%'">
+      <div class=" bar-label  bg-success text-dark ">{{ salesRevenueChartData.labels[i] }}: {{
+        data | currency }}</div>
+    </div>
+  </div>
+
+  <!-- <div class="col-md-4 py-1">
+    <div class="card">
+      <div class="card-body">
+        <div class="chartjs-size-monitor">
+          <div class="chartjs-size-monitor-expand">
+            <h4 class="text-dark">Sales Revenue</h4>
+            <div *ngFor="let data of salesRevenueChartData.data; let i = index" class="bar "
+              [style.height]="(data / maxRevenue * 100) + '%'">
+              <div class="bar-label  bg-gray-dark text-white badge-outline-success ">{{ salesRevenueChartData.labels[i]
+                }}: {{
+                data | currency }}</div>
+            </div>
+          </div>
+          <div class="chartjs-size-monitor-shrink">
+            <div class=""></div>
+          </div>
+        </div>
+        <canvas id="chDonut2" width="468" height="234" style="display: block; width: 468px; height: 234px;"
+          class="chartjs-render-monitor"></canvas>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- Sales Data Table -->
+  <table mat-table [dataSource]="sales" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let sale">{{ sale.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef>Product Name</th>
+      <td mat-cell *matCellDef="let sale">{{ sale.productName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalAmount">
+      <th mat-header-cell *matHeaderCellDef>Total Amount</th>
+      <td mat-cell *matCellDef="let sale">{{ sale.totalAmount | currency }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let sale">{{ sale.date }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id', 'productName', 'totalAmount', 'date']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'productName', 'totalAmount', 'date'];"></tr>
+  </table>
+  <!-- ----------------------------------------------------------------------------->
+  <h3>Supplier Report</h3>
+  <table mat-table [dataSource]="suppliers" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let supplier">{{supplier.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let supplier">{{supplier.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="contactPerson">
+      <th mat-header-cell *matHeaderCellDef>Contact Person</th>
+      <td mat-cell *matCellDef="let supplier">{{supplier.contactPerson}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created Date</th>
+      <td mat-cell *matCellDef="let supplier">{{supplier.createdAt |date}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['id', 'name', 'contactPerson','createdAt']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'contactPerson','createdAt'];"></tr>
+  </table>
+</div>

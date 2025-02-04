@@ -1,0 +1,84 @@
+<div>  
+    <h2>Supplier Management</h2>  
+
+    <input  
+        type="text"  
+        [(ngModel)]="searchTerm"  
+        (input)="filterSuppliers()"  
+        placeholder="Search by supplier name or contact person..."  
+    />  
+
+    <select [(ngModel)]="sortBy" (change)="sortSuppliers()">  
+        <option value="name">Sort by Name</option>  
+        <option value="contactPerson">Sort by Contact Person</option>  
+        <option value="email">Sort by Email</option>  
+    </select>  
+
+    <h3>Add New Supplier</h3>  
+    <form (ngSubmit)="addSupplier()">  
+        <input  
+            type="text"  
+            [(ngModel)]="newSupplier.name"  
+            name="name"  
+            placeholder="Supplier Name"  
+            required  
+        />  
+        <input  
+            type="text"  
+            [(ngModel)]="newSupplier.contactPerson"  
+            name="contactPerson"  
+            placeholder="Contact Person"  
+            required  
+        />  
+        <input  
+            type="email"  
+            [(ngModel)]="newSupplier.email"  
+            name="email"  
+            placeholder="Email"  
+            required  
+        />  
+        <input  
+            type="text"  
+            [(ngModel)]="newSupplier.phone"  
+            name="phone"  
+            placeholder="Phone"  
+            required  
+        />  
+        <input  
+            type="text"  
+            [(ngModel)]="newSupplier.address"  
+            name="address"  
+            placeholder="Address"  
+            required  
+        />  
+        <button type="submit">Add Supplier</button>  
+    </form>  
+
+    <table class="min-w-full border-collapse border border-gray-200 mt-4">  
+        <thead>  
+            <tr>  
+                <th class="border border-gray-300 p-2">Supplier Name</th>  
+                <th class="border border-gray-300 p-2">Contact Person</th>  
+                <th class="border border-gray-300 p-2">Email</th>  
+                <th class="border border-gray-300 p-2">Phone</th>  
+                <th class="border border-gray-300 p-2">Address</th>  
+                <th class="border border-gray-300 p-2">Created At</th>  
+                <th class="border border-gray-300 p-2">Actions</th>  
+            </tr>  
+        </thead>  
+        <tbody>  
+            <tr *ngFor="let supplier of filteredSuppliers">  
+                <td class="border border-gray-300 p-2">{{ supplier.name }}</td>  
+                <td class="border border-gray-300 p-2">{{ supplier.contactPerson }}</td>  
+                <td class="border border-gray-300 p-2">{{ supplier.email }}</td>  
+                <td class="border border-gray-300 p-2">{{ supplier.phone }}</td>  
+                <td class="border border-gray-300 p-2">{{ supplier.address }}</td>  
+                <td class="border border-gray-300 p-2">{{ supplier.createdAt | date }}</td>  
+                <td class="border border-gray-300 p-2">  
+                    <button (click)="updateSupplier(supplier.id, 'Updated Contact Person', 'updated@example.com', 'New Phone')">Update</button>  
+                    <button (click)="removeSupplier(supplier.id)">Remove</button>  
+                </td>  
+            </tr>  
+        </tbody>  
+    </table>  
+</div>
