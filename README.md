@@ -31,16 +31,6 @@ The Merchandise Management ERP System is a comprehensive web application designe
 
 ### Front-End Development:
 - [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/html5.svg" width="40" height="40">](https://github.com/NayamulNirob) - [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/css3.svg" width="40" height="40">](https://github.com/NayamulNirob) - [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/bootstrap-logo-shadow.png" width="40" height="40">](https://github.com/NayamulNirob)- [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/javascript.svg" width="40" height="40">](https://github.com/NayamulNirob)- [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/angular.svg" width="40" height="40">](https://github.com/NayamulNirob)-[<img src="https://www.typescriptlang.org/icons/icon-48x48.png?v=4" width="40" height="40">](https://github.com/NayamulNirob)- [<img src="https://img.icons8.com/windows/32/font-awesome.png" width="40" height="40">](https://github.com/NayamulNirob)
- 
-
-### Back-End Development
-
-- [<img src="https://github.com/user-attachments/assets/802876a1-3a54-40a6-bdc3-75f97dfc555b" width="50" height="50">](https://github.com/NayamulNirob)
-- [<img src="https://img.icons8.com/ios-filled/50/api-settings.png" width="40" height="40">](https://github.com/NayamulNirob)
-- [<img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" width="40" height="40">](https://github.com/NayamulNirob)
-- [<img src="https://jwt.io/img/pic_logo.svg" width="40" height="40">](https://github.com/NayamulNirob)
-- [<img src="https://www.oracle.com/a/ocom/img/cb71-java-logo.png" width="50" height="50">](https://github.com/NayamulNirob)
-
 
 
 **==== Software And Tools Required ======**
