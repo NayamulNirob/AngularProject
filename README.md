@@ -19,15 +19,13 @@ The Merchandise Management ERP System is a comprehensive web application designe
 10. Sales Management.
 11. Transaction Overview.
 12. Warehouse Management.
-13. Country Progress List.
 14. Supplier Management.
 15. To-do Task.
 16. Reports & Analytics Details.
 17. Create a new Buyer.
 18. View All the Buyers.
 
-## Technologies used:-
-![MMG](https://github.com/user-attachments/assets/a91d3e4d-f5d3-4b19-8a57-5359a102b785)
+
 
 ### Front-End Development:
 - [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/html5.svg" width="40" height="40">](https://github.com/NayamulNirob) - [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/css3.svg" width="40" height="40">](https://github.com/NayamulNirob) - [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/bootstrap-logo-shadow.png" width="40" height="40">](https://github.com/NayamulNirob)- [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/javascript.svg" width="40" height="40">](https://github.com/NayamulNirob)- [<img src="https://github.com/fatemazohor/fatemazohor/blob/main/svg/angular.svg" width="40" height="40">](https://github.com/NayamulNirob)-[<img src="https://www.typescriptlang.org/icons/icon-48x48.png?v=4" width="40" height="40">](https://github.com/NayamulNirob)- [<img src="https://img.icons8.com/windows/32/font-awesome.png" width="40" height="40">](https://github.com/NayamulNirob)
